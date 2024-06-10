@@ -16,15 +16,17 @@
     <script>
         function vowelCount(){
             event.preventDefault()
-            let replaced = ''
-            for(let x=0;x<textHere.value.length;x++){
-                replaced+=textHere.value.charAt(x).replace(/[^aeiou]/i, '')
+            let count = 0
+            let vowels = ['a', 'e', 'i', 'o', 'u']
+            for(letter of textHere.value.toLowerCase()){
+                if(vowels.includes(letter)){
+                    count++
+                }
             }
-            vcount.innerHTML = replaced.length
-            console.log(replaced)
+            vcount.innerHTML = count
         }
         function enterBtn(event){
-            if (event.key ==='Enter'){
+            if(event.key === 'Enter'){
                 vowelCount()
             }
         }
