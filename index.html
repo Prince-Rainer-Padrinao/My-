@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">VOWEL COUNTER</div>
+    <input type="text" name="" id="textHere" placeholder="Type your text here ..." onkeydown="checkEnter(event)" autocomplete="off">
+    <div class="container">
+        Vowel Count: <span id="span">0</span>
+    </div>
+    <a href="" onclick=vowelCount()>Check Vowel</a>
+    <script>
+        function vowelCount(){
+            event.preventDefault(); 
+            let replaced = textHere.value.replace(/[^aeiou]/gi, '')
+            span.innerHTML = replaced.length
+            console.log(replaced)
+            console.log(textHere.innerHTML)
+        }
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                vowelCount(event);
+            }
+        }
+    </script>
+</body>
+</html>
