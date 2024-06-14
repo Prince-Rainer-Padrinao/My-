@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    VOWEL COUNTER
+    <input type="text" autocomplete="off" id="textHere" onkeydown=enterr(event)>
+    vowel count: <span id="vcount">0</span>
+    <button onclick=vowels()>Enter</button>
+    <script>
+        
+        function vowels(){
+            
+            event.preventDefault
+            let count = 0
+            let vowel = ['a', 'e', 'i', 'o', 'u']
+            // for (letter of textHere.value){
+            //     if(/[aeiou]/i.test(letter)){
+            //         count++
+            //     }
+            // }
+            // for (let x=0; x<textHere.value.length; x++){
+            //     if (['a', 'e', 'i', 'o', 'u'].includes(textHere.value.toLowerCase().charAt(x))){
+            //         count++
+            //     }
+            // }
+            let vowelsss =''
+            for (let x =0; x<textHere.value.length; x++ ){
+                vowelsss += textHere.value.toLowerCase().charAt(x).replace(/[^aeiou]/, '')
+                // vowelsss += document.getElementById("textHere").value.toLowerCase().charAt(x).replace(/[^aeiou]/, '')
+                    // both works lol
+            }
+            count = vowelsss.length
+            
+            vcount.innerHTML = count
+        }
+        function enterr(event){
+            if (event.key === 'Enter'){
+                vowels()
+            }
+        }
+        
+       
+    </script>
+</body>
+</html>
